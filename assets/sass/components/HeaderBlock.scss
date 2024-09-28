@@ -3,6 +3,7 @@
     border-radius: 0 0 30px 30px;
     position: sticky;
     top: 0;
+    z-index: 1000;
     &__wrapper {
         padding: 10px 30px;
         display: flex;
