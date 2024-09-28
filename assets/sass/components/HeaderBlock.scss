@@ -1,0 +1,24 @@
+.header {
+    background-color: $white;
+    border-radius: 0 0 30px 30px;
+    &__wrapper {
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__user {
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        color: $neutral600;
+        & > div {
+            &:first-child {
+                font-weight: 400;
+                & > span {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
