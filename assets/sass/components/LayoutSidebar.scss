@@ -5,6 +5,9 @@
     padding: 30px;
     background-color: $white;
     border-radius: 10px;
+    height: fit-content;
+    position: sticky;
+    top: 90px;
     &-navigation {
         display: flex;
         flex-direction: column;
