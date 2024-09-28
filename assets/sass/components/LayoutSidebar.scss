@@ -1,0 +1,56 @@
+.layout__sidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 170px;
+    padding: 30px;
+    background-color: $white;
+    border-radius: 10px;
+    &-navigation {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        & > li {
+            width: fit-content;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+            font-weight: 400;
+            transition: color $transitionTime;
+            & > svg {
+                path {
+                    transition: stroke $transitionTime;
+                }
+            }
+            &:hover {
+                color: $green;
+                svg path {
+                    stroke: $green;
+                }
+            }
+            &.router-link-active {
+                color: $green;
+                svg path {
+                    stroke: $green;
+                }
+            }
+        }
+    }
+    &-exit {
+        border-top: 1px solid #d9d9d9;
+        padding-top: 20px;
+        button {
+            display: flex;
+            align-items: center;
+            column-gap: 15px;
+            font-weight: 400;
+            color: $neutral500;
+            cursor: pointer;
+            transition: color $transitionTime;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}

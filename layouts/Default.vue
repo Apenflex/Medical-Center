@@ -7,7 +7,7 @@
     <main class="mt-30">
         <div class="container-80">
             <div class="layout__wrapper">
-                <aside class="sidebar">Sidebar</aside>
+                <LayoutSidebar />
                 <slot />
             </div>
         </div>
