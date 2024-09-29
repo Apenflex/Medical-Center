@@ -5,6 +5,7 @@ defineProps({
         default: () => ({})
     }
 })
+const clientsStore = useClientsStore()
 </script>
 
 <template>
@@ -15,28 +16,39 @@ defineProps({
                     <div class="client-card__item-label">
                         Ім’я/Нікнейм
                     </div>
-                    <div>{{ client.name }}</div>
+                    <div>
+                        {{ client.name }}
+                    </div>
                 </div>
                 <div class="client-card__item">
                     <div class="client-card__item-label">
                         Категорія
                     </div>
-                    <div>{{ client.category }}</div>
+                    <div>
+                        {{ client.category }}
+                    </div>
                 </div>
                 <div class="client-card__item">
                     <div class="client-card__item-label">
                         Телефон
                     </div>
-                    <div class="space-nowrap">{{ client.phone }}</div>
+                    <div class="space-nowrap">
+                        {{ client.phone }}
+                    </div>
                 </div>
                 <div class="client-card__item font-500">
                     <div class="client-card__item-label space-nowrap">
                         Дата оновлення
                     </div>
-                    <div class="space-nowrap">{{ client.updatedAt }}</div>
+                    <div class="space-nowrap">
+                        {{ client.updatedAt }}
+                    </div>
                 </div>
             </div>
-            <button class="pointer">
+            <button 
+                @click="clientsStore.ACT_DELETE_CLIENT(client.id)"
+                class="pointer"
+            >
                 <IconDelete />
             </button>
         </div>

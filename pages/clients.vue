@@ -1,18 +1,33 @@
 <script setup>
 const clientsStore = useClientsStore()
+import { useDebounceFn } from '@vueuse/core';
 // Search by name
 const search = ref('')
-watch(search, (value) => {
-    console.log('value', value)
-})
+const debouncedSearch = ref('');
+const debouncedFn = useDebounceFn((value) => {
+    debouncedSearch.value = value;
+}, 500);
+watch(search, (newValue) => {
+    debouncedFn(newValue);
+});
 // Sort by category
 const sortOptions = ref([
-    { value: 'category1', label: 'Категорія 1' },
-    { value: 'category2', label: 'Категорія 2' },
-    { value: 'category3', label: 'Категорія 3' },
-    { value: 'category4', label: 'Категорія 4' },
-    { value: 'category5', label: 'Категорія 5' },
+    { value: 'Категорія 1', label: 'Категорія 1' },
+    { value: 'Категорія 2', label: 'Категорія 2' },
+    { value: 'Категорія 3', label: 'Категорія 3' },
+    { value: 'Категорія 4', label: 'Категорія 4' },
+    { value: 'Категорія 5', label: 'Категорія 5' },
 ])
+const sortBy = ref('')
+const sortedClients = computed(() => {
+    // Спочатку фільтруємо клієнтів за пошуком
+    const filteredClients = clientsStore.FILTERED_CLIENTS(debouncedSearch.value);
+    // Потім сортуємо за вибраною категорією
+    if (sortBy.value) {
+        return filteredClients.filter(client => client.category === sortBy.value);
+    }
+    return filteredClients;
+});
 </script>
 
 <template>
@@ -20,7 +35,9 @@ const sortOptions = ref([
         <div class="page-clients__bar dflex">
             <div class="page-clients__count dflex">
                 <span class="font-700">клієнти</span>
-                <span class="font-400 space-nowrap">35744 чоловік</span>
+                <span class="font-400 space-nowrap">
+                    {{ clientsStore.GET_CLIENTS?.length }} чоловік
+                </span>
             </div>
             <div class="page-clients__filter dflex">
                 <Input
@@ -41,6 +58,7 @@ const sortOptions = ref([
                 />
             </div>
             <Button
+                @click="clientsStore.ACT_ADD_CLIENT"
                 class="basic-btn"
             >
                 Додати
@@ -49,22 +67,30 @@ const sortOptions = ref([
                 </template>
             </Button>
         </div>
-        <TransitionGroup 
-            tag="div"
-            name="remove-card"
-            class="page-clients__wrapper"
-        >
+        <div class="page-clients__wrapper">
             <ul class="client-list-header font-600">
                 <li class="client-list-header__item">Ім’я/Нікнейм</li>
                 <li class="client-list-header__item">Категорія</li>
                 <li class="client-list-header__item">Телефон</li>
                 <li class="client-list-header__item">Дата оновлення</li>
             </ul>
-            <ClientCard 
-                v-for="client in clientsStore.clients"
-                :key="client.id"
-                :client="client"
-            />
-        </TransitionGroup>
+            <TransitionGroup
+                tag="div"
+                name="remove-card"
+            >
+                <ClientCard
+                    v-if="sortedClients.length"
+                    v-for="client in sortedClients"
+                    :key="client.id"
+                    :client="client"
+                />
+                <div
+                    v-else
+                    class="empty-list"
+                >
+                    <span>Список порожній</span>
+                </div>
+            </TransitionGroup>
+        </div>
     </section>
 </template>

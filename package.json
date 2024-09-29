@@ -14,10 +14,16 @@
 		"@nuxt/image": "^1.8.0",
 		"@pinia/nuxt": "^0.5.4",
 		"@vueform/multiselect": "^2.6.10",
+		"@vueuse/components": "^11.1.0",
+		"@vueuse/core": "^11.1.0",
+		"@vueuse/nuxt": "^11.1.0",
 		"nuxt": "^3.13.0",
 		"pinia": "^2.2.2",
 		"sass": "^1.79.4",
 		"vue": "^3.4.36",
 		"vue-router": "^4.4.3"
+	},
+	"devDependencies": {
+		"@pinia-plugin-persistedstate/nuxt": "^1.2.1"
 	}
 }

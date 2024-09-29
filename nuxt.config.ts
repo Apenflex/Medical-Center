@@ -18,7 +18,7 @@ export default defineNuxtConfig({
             pathPrefix: false
         }
     ],
-    modules: ['@pinia/nuxt', '@nuxt/icon', '@nuxt/image'],
+    modules: ['@pinia/nuxt', '@nuxt/icon', '@nuxt/image', '@pinia-plugin-persistedstate/nuxt', '@vueuse/nuxt'],
     $production: {},
     $development: {}
 })
