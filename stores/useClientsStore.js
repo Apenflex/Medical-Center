@@ -28,7 +28,7 @@ export const useClientsStore = defineStore('useClientsStore', {
             );
         },
         SORTED_CLIENTS: (state) => (sortCategory) => {
-            if (!sortCategory) return state.clients; // Якщо категорію не вибрано, повертаємо всіх клієнтів
+            if (!sortCategory) return state.clients;
             return state.clients.filter(client => client.category === sortCategory);
         },
     },
