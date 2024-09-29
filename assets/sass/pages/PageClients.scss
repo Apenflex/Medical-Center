@@ -1,11 +1,4 @@
 .page-clients {
-    @include media($mdPlus) {
-        height: calc(100dvh - 90px);
-        overflow-y: scroll;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
     &__bar {
         justify-content: space-between;
         align-items: center;
@@ -43,14 +36,30 @@
             justify-content: space-between;
             grid-row: 2;
             grid-column: 1 / 4;
-            .multiselect {
+        }
+        @include media($xsPlus) {
+            flex-direction: column;
+            row-gap: 15px;
+        }
+        .multiselect {
+            @include media($sm) {
                 margin: 0;
+            }
+            @include media($xsPlus) {
+                width: 100%;
             }
         }
     }
     .basic-btn {
         @include media($sm) {
             grid-column: 3 / 4;
+        }
+        @include media($xsPlus) {
+            grid-row: 3;
+            grid-column: 1/4;
+            width: 100%;
+            justify-content: center;
+            margin-top: 5px;
         }
     }
     &__wrapper {
@@ -64,6 +73,9 @@
         @include media($sm) {
             background-color: transparent;
             padding: 0 0 30px 0;
+        }
+        @include media($xsPlus) {
+            padding: 0 0 15px 0;
         }
         .client-list-header {
             display: grid;

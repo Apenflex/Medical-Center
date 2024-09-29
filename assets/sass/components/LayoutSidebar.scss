@@ -19,6 +19,14 @@
     @include media($sm) {
         column-gap: 6.510417vw;
     }
+    @include media($xsPlus) {
+        padding: 10px 15px;
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        column-gap: 15px;
+        display: grid;
+        grid-template-columns: 85% max-content;
+    }
     &-navigation {
         flex-direction: column;
         row-gap: 20px;
@@ -31,6 +39,11 @@
             column-gap: 0;
             justify-content: space-between;
         }
+        @include media($xsPlus) {
+            font-size: 13px;
+            line-height: 18px;
+            column-gap: 15px;
+        }
         & > li {
             width: fit-content;
         }
@@ -42,6 +55,15 @@
                 flex-direction: column;
                 row-gap: 3px;
             }
+            @include media($xsPlus) {
+                row-gap: 0;
+            }
+            &:hover {
+                color: $green;
+                svg path {
+                    stroke: $green;
+                }
+            }
             & > svg {
                 @include media($smPlus) {
                     width: 30px;
@@ -50,11 +72,20 @@
                 path {
                     transition: stroke $transitionTime;
                 }
+                &.rotate {
+                    @include media($xsPlus) {
+                        transform: rotate(-45deg);
+                    }
+                }
             }
-            &:hover {
-                color: $green;
-                svg path {
-                    stroke: $green;
+
+            span {
+                @include media($xsPlus) {
+                    display: block;
+                    max-width: 48px; // Змінюється в залежності від ширини контейнера
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis; // додає три крапки для тексту
                 }
             }
             &.router-link-active {
@@ -81,6 +112,11 @@
             @include media($smPlus) {
                 flex-direction: column;
                 row-gap: 3px;
+            }
+            @include media($xsPlus) {
+                font-size: 13px;
+                line-height: 18px;
+                row-gap: 0;
             }
             &:hover {
                 color: $red;

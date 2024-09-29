@@ -4,7 +4,7 @@
 
 <template>
     <HeaderBlock />
-    <main class="container-80 mt-30">
+    <main class="container-80">
         <div class="layout__wrapper">
             <LayoutSidebar />
             <slot />

@@ -1,4 +1,5 @@
 <script setup>
+const clientsStore = useClientsStore()
 // Search by name
 const search = ref('')
 watch(search, (value) => {
@@ -48,25 +49,22 @@ const sortOptions = ref([
                 </template>
             </Button>
         </div>
-        <div class="page-clients__wrapper">
+        <TransitionGroup 
+            tag="div"
+            name="remove-card"
+            class="page-clients__wrapper"
+        >
             <ul class="client-list-header font-600">
                 <li class="client-list-header__item">Ім’я/Нікнейм</li>
                 <li class="client-list-header__item">Категорія</li>
                 <li class="client-list-header__item">Телефон</li>
                 <li class="client-list-header__item">Дата оновлення</li>
             </ul>
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-            <ClientCard />
-        </div>
+            <ClientCard 
+                v-for="client in clientsStore.clients"
+                :key="client.id"
+                :client="client"
+            />
+        </TransitionGroup>
     </section>
 </template>

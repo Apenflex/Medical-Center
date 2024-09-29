@@ -29,6 +29,13 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+main {
+    margin-top: 30px;
+    @include media($xsPlus) {
+        margin-top: 20px;
+    }
+}
+
 a {
     text-decoration: none;
     color: $neutral500;
@@ -73,16 +80,16 @@ select {
 }
 
 .container-80 {
-    width: min(100% - 160px, 1920px);
+    width: min(100% - 8.333333vw, 1920px);
     margin-inline: auto;
     @include media($lg) {
         width: min(100% - 11.111111vw, 1920px);
     }
     @include media($mdPlus) {
-        width: min(100% - 100px, 1920px);
+        width: min(100% - 7.8125vw, 1920px);
     }
     @include media($md) {
-        width: min(100% - 80px, 1920px);
+        width: min(100% - 7.8125vw, 1920px);
     }
     @include media($sm) {
         width: min(100% - 32px, 1920px);

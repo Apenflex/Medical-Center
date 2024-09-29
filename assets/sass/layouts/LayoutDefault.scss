@@ -10,4 +10,13 @@
         flex-direction: column-reverse;
         height: calc(100dvh - 90px);
     }
+    & > section {
+        @include media($mdPlus) {
+            height: calc(100dvh - 90px);
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
 }

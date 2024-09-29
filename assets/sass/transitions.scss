@@ -1,0 +1,12 @@
+.remove-card {
+    &-move,
+    &-enter-active,
+    &-leave-active {
+        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+    &-enter-from,
+    &-leave-to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}

@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+defineProps({
+    client: {
+        type: Object,
+        default: () => ({})
+    }
+})
+</script>
 
 <template>
     <div class="client-card">
@@ -8,25 +15,25 @@
                     <div class="client-card__item-label">
                         Ім’я/Нікнейм
                     </div>
-                    <div>Михайло</div>
+                    <div>{{ client.name }}</div>
                 </div>
                 <div class="client-card__item">
                     <div class="client-card__item-label">
                         Категорія
                     </div>
-                    <div>Категорія 1</div>
+                    <div>{{ client.category }}</div>
                 </div>
                 <div class="client-card__item">
                     <div class="client-card__item-label">
                         Телефон
                     </div>
-                    <div class="space-nowrap">+380 99 999 99 99</div>
+                    <div class="space-nowrap">{{ client.phone }}</div>
                 </div>
-                <div class="client-card__item">
+                <div class="client-card__item font-500">
                     <div class="client-card__item-label space-nowrap">
                         Дата оновлення
                     </div>
-                    <div class="space-nowrap">15/08/2024 18:13</div>
+                    <div class="space-nowrap">{{ client.updatedAt }}</div>
                 </div>
             </div>
             <button class="pointer">

@@ -1,0 +1,80 @@
+export const useClientsStore = defineStore('useClientsStore', {
+    state: () => ({
+        clients: [
+            {
+                id: 1,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 2,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 3,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 4,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 5,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 6,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 7,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 8,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 9,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+            {
+                id: 10,
+                name: 'John Doe',
+                category: "Категорія 1",
+                phone: "380123456789",
+                updatedAt: "15/08/2024 18:13",
+            },
+        ],
+    }),
+    getters: {
+        GET_CLIENTS: (state) => state.clients,
+    },
+    actions: {},
+});

@@ -2,16 +2,33 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    &.container-80 {
+        @include media($xsPlus) {
+            width: 100%;
+        }
+    }
     &__wrapper {
         background-color: $white;
         border-radius: 0 0 10px 10px;
         padding: 10px 30px;
         justify-content: space-between;
         align-items: center;
+        @include media($xsPlus) {
+            padding: 10px 15px;
+        }
     }
     &__user {
         align-items: center;
         column-gap: 15px;
         color: $neutral600;
+        @include media($xsPlus) {
+            column-gap: 10px;
+        }
+        & > div {
+            @include media($xsPlus) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
     }
 }

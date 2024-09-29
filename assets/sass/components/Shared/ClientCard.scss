@@ -6,12 +6,18 @@
             margin-top: 20px;
         }
     }
+    @include media($xsPlus) {
+        &:not(:first-of-type) {
+            margin-top: 15px;
+        }
+    }
     &__wrapper {
         padding: 20px;
         border: 1px solid $neutral300;
         border-radius: 10px;
         justify-content: space-between;
         column-gap: 28px;
+        box-shadow: 0px 4px 4px 0px #00000040;
         @include media($smPlus) {
             column-gap: 0;
         }
@@ -21,6 +27,7 @@
             row-gap: 20px;
             background-color: $white;
             border: none;
+            box-shadow: initial;
         }
         @include media($xsPlus) {
             padding: 30px 15px;
@@ -45,7 +52,6 @@
         }
     }
     &__item {
-        font-weight: 500;
         font-size: 14px;
         line-height: 20px;
         @include media($sm) {

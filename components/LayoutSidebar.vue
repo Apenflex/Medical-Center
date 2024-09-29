@@ -46,8 +46,10 @@ const navigationLinks = [
                 :key="idx"
             >
                 <NuxtLink :to="link.link" class="dflex font-400">
-                    <component  :is="link.icon" />
-                    {{ link.name }}
+                    <component  :is="link.icon" :class="{ 'rotate': idx === 3 }"/>
+                    <span>
+                        {{ link.name }}
+                    </span>
                 </NuxtLink>
             </li>
         </ul>
