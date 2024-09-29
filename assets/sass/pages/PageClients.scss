@@ -1,12 +1,25 @@
 .page-clients {
+    @include media($mdPlus) {
+        height: calc(100dvh - 90px);
+    }
     &__bar {
         justify-content: space-between;
         align-items: center;
         column-gap: 42px;
+        @include media($smPlus) {
+            column-gap: 16px;
+        }
+        @include media($sm) {
+            display: grid;
+            row-gap: 16px;
+        }
     }
     &__count {
         flex-direction: column;
         row-gap: 8px;
+        @include media($sm) {
+            grid-row: 1;
+        }
         & > span {
             &:first-child {
                 font-size: 20px;
@@ -22,11 +35,46 @@
     }
     &__filter {
         column-gap: 16px;
+        @include media($sm) {
+            justify-content: space-between;
+            grid-row: 2;
+            grid-column: 1 / 4;
+            .multiselect {
+                margin: 0;
+            }
+        }
+    }
+    .basic-btn {
+        @include media($sm) {
+            grid-column: 3 / 4;
+        }
     }
     &__wrapper {
         padding: 30px;
         background-color: $white;
         border-radius: 10px;
         margin-top: 20px;
+        @include media($lg) {
+            padding: 30px 2.083333vw;
+        }
+        @include media($sm) {
+            background-color: transparent;
+        }
+        .client-list-header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 10px;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 20px;
+            color: $neutral400;
+            @include media($smPlus) {
+                grid-template-columns: 24% 25% 24% 25%;
+                column-gap: 0;
+            }
+            @include media($sm) {
+                display: none;
+            }
+        }
     }
 }

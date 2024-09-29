@@ -9,6 +9,9 @@
     column-gap: 10px;
     border: 1px solid $green;
     transition: background-color $transitionTime;
+    @include media($smPlus) {
+        padding: 10px 24px;
+    }
     &:hover {
         background-color: $green;
         .basic-btn__text {

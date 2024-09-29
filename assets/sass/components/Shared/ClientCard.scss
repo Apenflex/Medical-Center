@@ -1,0 +1,33 @@
+.client-card {
+    margin-top: 20px;
+    @include media($sm) {
+        margin-top: 0;
+        &:not(:first-of-type) {
+            margin-top: 20px;
+        }
+    }
+    &__wrapper {
+        padding: 20px;
+        border: 1px solid $neutral300;
+        border-radius: 10px;
+        justify-content: space-between;
+        column-gap: 28px;
+        @include media($smPlus) {
+            column-gap: 0;
+        }
+    }
+    &__content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 50px;
+        @include media($smPlus) {
+            column-gap: 0;
+        }
+    }
+    &__item {
+        &-label {
+            display: none;
+        }
+    }
+}

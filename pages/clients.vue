@@ -1,9 +1,10 @@
 <script setup>
+// Search by name
 const search = ref('')
 watch(search, (value) => {
     console.log('value', value)
 })
-// sort by category
+// Sort by category
 const sortOptions = ref([
     { value: 'category1', label: 'Категорія 1' },
     { value: 'category2', label: 'Категорія 2' },
@@ -48,11 +49,24 @@ const sortOptions = ref([
             </Button>
         </div>
         <div class="page-clients__wrapper">
-            <div v-for="(_, idx) in 15" :key="idx" class="client-card">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit cumque maiores, iusto, provident
-                debitis numquam repudiandae minus expedita cum nostrum aliquid maxime. Assumenda ea perspiciatis id
-                sint ratione, nam ducimus.
-            </div>
+            <ul class="client-list-header font-600">
+                <li class="client-list-header__item">Ім’я/Нікнейм</li>
+                <li class="client-list-header__item">Категорія</li>
+                <li class="client-list-header__item">Телефон</li>
+                <li class="client-list-header__item">Дата оновлення</li>
+            </ul>
+            <ClientCard />
+            <ClientCard />
+            <!-- <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard />
+            <ClientCard /> -->
         </div>
     </section>
 </template>

@@ -75,6 +75,12 @@ select {
 .container-80 {
     width: min(100% - 160px, 1920px);
     margin-inline: auto;
+    @include media($lg) {
+        width: min(100% - 11.111111vw, 1920px);
+    }
+    @include media($mdPlus) {
+        width: min(100% - 100px, 1920px);
+    }
     @include media($md) {
         width: min(100% - 80px, 1920px);
     }

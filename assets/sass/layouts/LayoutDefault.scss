@@ -2,4 +2,12 @@
     display: grid;
     grid-template-columns: 295px 1fr;
     column-gap: 20px;
+    @include media($lg) {
+        grid-template-columns: 20.486111vw 1fr;
+    }
+    @include media($mdPlus) {
+        display: flex;
+        flex-direction: column-reverse;
+        height: calc(100dvh - 90px);
+    }
 }
