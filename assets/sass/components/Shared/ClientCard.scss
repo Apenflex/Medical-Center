@@ -15,6 +15,17 @@
         @include media($smPlus) {
             column-gap: 0;
         }
+        @include media($sm) {
+            flex-direction: column;
+            align-items: flex-end;
+            row-gap: 20px;
+            background-color: $white;
+            border: none;
+        }
+        @include media($xsPlus) {
+            padding: 30px 15px;
+            row-gap: 5px;
+        }
     }
     &__content {
         width: 100%;
@@ -24,10 +35,37 @@
         @include media($smPlus) {
             column-gap: 0;
         }
+        @include media($sm) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        @include media($xsPlus) {
+            grid-template-columns: 1fr;
+        }
     }
     &__item {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        @include media($sm) {
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 20px;
+            row-gap: 5px;
+            &:not(:last-of-type) {
+                border-bottom: 1px solid #FAFAFA;
+            }
+        }
+        @include media($xsPlus) {
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 15px;
+        }
         &-label {
             display: none;
+            @include media($sm) {
+                display: block;
+            }
         }
     }
 }

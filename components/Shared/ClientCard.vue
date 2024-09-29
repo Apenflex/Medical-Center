@@ -20,13 +20,13 @@
                     <div class="client-card__item-label">
                         Телефон
                     </div>
-                    <div>+380 99 999 99 99</div>
+                    <div class="space-nowrap">+380 99 999 99 99</div>
                 </div>
                 <div class="client-card__item">
-                    <div class="client-card__item-label">
+                    <div class="client-card__item-label space-nowrap">
                         Дата оновлення
                     </div>
-                    <div>15/08/2024 18:13</div>
+                    <div class="space-nowrap">15/08/2024 18:13</div>
                 </div>
             </div>
             <button class="pointer">

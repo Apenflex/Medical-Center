@@ -57,7 +57,6 @@ const sortOptions = ref([
             </ul>
             <ClientCard />
             <ClientCard />
-            <!-- <ClientCard />
             <ClientCard />
             <ClientCard />
             <ClientCard />
@@ -66,7 +65,8 @@ const sortOptions = ref([
             <ClientCard />
             <ClientCard />
             <ClientCard />
-            <ClientCard /> -->
+            <ClientCard />
+            <ClientCard />
         </div>
     </section>
 </template>

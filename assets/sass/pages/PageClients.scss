@@ -1,6 +1,10 @@
 .page-clients {
     @include media($mdPlus) {
         height: calc(100dvh - 90px);
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     &__bar {
         justify-content: space-between;
@@ -59,6 +63,7 @@
         }
         @include media($sm) {
             background-color: transparent;
+            padding: 0 0 30px 0;
         }
         .client-list-header {
             display: grid;
