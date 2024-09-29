@@ -23,6 +23,28 @@
             }
         }
     }
+    &:disabled {
+        background-color: $neutral400;
+        .basic-btn__text {
+            color: $white;
+        }
+        .basic-btn__icon {
+            path {
+                stroke: $white;
+            }
+        }
+        &:hover {
+            background-color: $neutral400;
+            .basic-btn__text {
+                color: $white;
+            }
+            .basic-btn__icon {
+                path {
+                    stroke: $white;
+                }
+            }
+        }
+    }
     &__text {
         letter-spacing: 0.64px;
         color: $green;

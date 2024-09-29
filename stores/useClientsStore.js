@@ -43,7 +43,17 @@ export const useClientsStore = defineStore('useClientsStore', {
                 name: `Random User ${newId}`,
                 category: `Категорія ${Math.floor(Math.random() * 5) + 1}`,
                 phone: `380${Math.floor(100000000 + Math.random() * 900000000)}`,
-                updatedAt: new Date().toLocaleString(),
+                updatedAt: (() => {
+                    const now = new Date();
+                    const day = String(now.getDate()).padStart(2, '0');
+                    const month = String(now.getMonth() + 1).padStart(2, '0'); // Місяці починаються з 0
+                    const year = now.getFullYear();
+                    const hours = String(now.getHours()).padStart(2, '0');
+                    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+                    // Повертаємо дату у потрібному форматі
+                    return `${day}/${month}/${year} ${hours}:${minutes}`;
+                })(),
             };
             this.clients.push(randomClient);
         },

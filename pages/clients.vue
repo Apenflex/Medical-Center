@@ -1,5 +1,5 @@
 <script setup>
-import { useDebounceFn } from '@vueuse/core';
+import { set, useDebounceFn } from '@vueuse/core';
 
 const clientsListHeader = ref([
     { label: 'Ім’я/Нікнейм', key: 'name' },
@@ -36,6 +36,14 @@ const sortedClients = computed(() => {
     }
     return filteredClients;
 });
+const isAddingClient = ref(false);
+const handleAddClient = () => {
+    isAddingClient.value = true;
+    clientsStore.ACT_ADD_CLIENT();
+    setTimeout(() => {
+        isAddingClient.value = false;
+    }, 500);
+}
 </script>
 
 <template>
@@ -66,7 +74,8 @@ const sortedClients = computed(() => {
                 />
             </div>
             <Button
-                @click="clientsStore.ACT_ADD_CLIENT"
+                @click="handleAddClient"
+                :disabled="isAddingClient"
                 class="basic-btn"
             >
                 Додати
