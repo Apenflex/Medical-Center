@@ -1,6 +1,14 @@
 <script setup>
-const clientsStore = useClientsStore()
 import { useDebounceFn } from '@vueuse/core';
+
+const clientsListHeader = ref([
+    { label: 'Ім’я/Нікнейм', key: 'name' },
+    { label: 'Категорія', key: 'category' },
+    { label: 'Телефон', key: 'phone' },
+    { label: 'Дата оновлення', key: 'updatedAt' },
+])
+
+const clientsStore = useClientsStore()
 // Search by name
 const search = ref('')
 const debouncedSearch = ref('');
@@ -69,10 +77,13 @@ const sortedClients = computed(() => {
         </div>
         <div class="page-clients__wrapper">
             <ul class="client-list-header font-600">
-                <li class="client-list-header__item">Ім’я/Нікнейм</li>
-                <li class="client-list-header__item">Категорія</li>
-                <li class="client-list-header__item">Телефон</li>
-                <li class="client-list-header__item">Дата оновлення</li>
+                <li
+                    v-for="item in clientsListHeader"
+                    :key="item.key"
+                    class="client-list-header__item"
+                >
+                    {{ item.label }}
+                </li>
             </ul>
             <TransitionGroup
                 tag="div"
