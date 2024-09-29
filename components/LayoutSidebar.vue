@@ -39,20 +39,20 @@ const navigationLinks = [
 </script>
 
 <template>
-    <aside class="layout__sidebar">
-        <ul class="layout__sidebar-navigation">
+    <aside class="layout__sidebar dflex">
+        <ul class="layout__sidebar-navigation dflex">
             <li 
                 v-for="(link, idx) in navigationLinks"
                 :key="idx"
             >
-                <NuxtLink :to="link.link">
+                <NuxtLink :to="link.link" class="dflex font-400">
                     <component  :is="link.icon" />
                     {{ link.name }}
                 </NuxtLink>
             </li>
         </ul>
         <div class="layout__sidebar-exit">
-            <button>
+            <button class="dflex font-400">
                 <IconExit />
                 Вийти
             </button>

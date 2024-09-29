@@ -1,0 +1,36 @@
+.basic-btn {
+    height: fit-content;
+    width: fit-content;
+    z-index: 1;
+    padding: 10px 64px;
+    border-radius: 50px;
+    outline: none;
+    align-items: center;
+    column-gap: 10px;
+    border: 1px solid $green;
+    transition: background-color $transitionTime;
+    &:hover {
+        background-color: $green;
+        .basic-btn__text {
+            color: $white;
+        }
+        .basic-btn__icon {
+            path {
+                stroke: $white;
+            }
+        }
+    }
+    &__text {
+        letter-spacing: 0.64px;
+        color: $green;
+        transition: color $transitionTime;
+        &--hidden {
+            opacity: 0;
+        }
+    }
+    &__icon {
+        path {
+            transition: stroke $transitionTime;
+        }
+    }
+}

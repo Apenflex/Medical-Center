@@ -13,6 +13,7 @@
 		"@nuxt/icon": "^1.5.2",
 		"@nuxt/image": "^1.8.0",
 		"@pinia/nuxt": "^0.5.4",
+		"@vueform/multiselect": "^2.6.10",
 		"nuxt": "^3.13.0",
 		"pinia": "^2.2.2",
 		"sass": "^1.79.4",

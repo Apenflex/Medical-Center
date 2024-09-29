@@ -1,0 +1,32 @@
+.page-clients {
+    &__bar {
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 42px;
+    }
+    &__count {
+        flex-direction: column;
+        row-gap: 8px;
+        & > span {
+            &:first-child {
+                font-size: 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+                color: $neutral600;
+            }
+            &:last-child {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+    &__filter {
+        column-gap: 16px;
+    }
+    &__wrapper {
+        padding: 30px;
+        background-color: $white;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+}

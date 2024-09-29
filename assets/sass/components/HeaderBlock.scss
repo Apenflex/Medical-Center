@@ -1,27 +1,17 @@
 .header {
-    background-color: $white;
-    border-radius: 0 0 30px 30px;
     position: sticky;
     top: 0;
     z-index: 1000;
     &__wrapper {
+        background-color: $white;
+        border-radius: 0 0 10px 10px;
         padding: 10px 30px;
-        display: flex;
         justify-content: space-between;
         align-items: center;
     }
     &__user {
-        display: flex;
         align-items: center;
         column-gap: 15px;
         color: $neutral600;
-        & > div {
-            &:first-child {
-                font-weight: 400;
-                & > span {
-                    font-weight: 600;
-                }
-            }
-        }
     }
 }

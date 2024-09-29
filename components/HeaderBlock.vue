@@ -4,7 +4,7 @@
 
 <template>
     <header class="header container-80">
-        <div class="header__wrapper">
+        <div class="header__wrapper dflex">
             <NuxtLink
                 to="/"
                 class="header__logo"
@@ -15,8 +15,8 @@
                     width="140"
                 />
             </NuxtLink>
-            <div class="header__user">
-                <div>Привіт, <span>Адмін</span></div>
+            <div class="header__user dflex">
+                <div class="font-400">Привіт, <span class="font-600">Адмін</span></div>
                 <NuxtLink to="/profile">
                     <NuxtImg
                         src="/user_avatar.svg"

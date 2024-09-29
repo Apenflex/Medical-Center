@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
+    <section>
         <h1>Banners Page</h1>
-    </div>
+    </section>
 </template>

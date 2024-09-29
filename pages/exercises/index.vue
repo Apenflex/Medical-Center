@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
+    <section>
         <h1>Exercises Page</h1>
-    </div>
+    </section>
 </template>

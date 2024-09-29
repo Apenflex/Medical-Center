@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
+    <section>
         <h1>Scanner Page</h1>
-    </div>
+    </section>
 </template>

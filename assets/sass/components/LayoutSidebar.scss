@@ -1,5 +1,4 @@
 .layout__sidebar {
-    display: flex;
     flex-direction: column;
     row-gap: 170px;
     padding: 30px;
@@ -9,17 +8,14 @@
     position: sticky;
     top: 90px;
     &-navigation {
-        display: flex;
         flex-direction: column;
         row-gap: 20px;
         & > li {
             width: fit-content;
         }
         a {
-            display: flex;
             align-items: center;
             column-gap: 15px;
-            font-weight: 400;
             transition: color $transitionTime;
             & > svg {
                 path {
@@ -44,10 +40,8 @@
         border-top: 1px solid #d9d9d9;
         padding-top: 20px;
         button {
-            display: flex;
             align-items: center;
             column-gap: 15px;
-            font-weight: 400;
             color: $neutral500;
             cursor: pointer;
             transition: color $transitionTime;
